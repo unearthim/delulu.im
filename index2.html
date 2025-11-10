@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === 1. Primary Meta Tags === -->
+    <title>delulu.im | A Digital Monument</title>
+    <meta name="title" content="delulu.im | A Digital Monument">
+    <meta name="description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' An unearth.im digital artifact.">
+    <meta name="keywords" content="delulu, solulu, trululu, unearth.im, digital monument, affirmations, grindset, digital archaeology, brand foundry, i am">
+
+    <!-- === 2. unearth.im Standard Tags === -->
+    <meta name="author" content="unearth.im">
+    <link rel="canonical" href="https://delulu.im">
+
+    <!-- === 3. Open Graph (Facebook, etc.) === -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://delulu.im">
+    <meta property="og:title" content="delulu.im | A Digital Monument">
+    <meta property="og:description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' An unearth.im digital artifact.">
+    <meta property="og:image" content="https://unearth.im/og-preview-delulu.png">
+    <meta property="og:site_name" content="unearth.im">
+
+    <!-- === 4. Twitter Card === -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://delulu.im">
+    <meta property="twitter:title" content="delulu.im | A Digital Monument">
+    <meta property="twitter:description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' An unearth.im digital artifact.">
+    <meta property="twitter:image" content="https://unearth.im/og-preview-delulu.png">
+
+    <!-- === 5. Favicons === -->
+    <link rel="icon" href="https://unearth.im/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="https://unearth.im/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="https://unearth.im/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6B4EFF;
+            --secondary: #A855F7;
+            --accent: #EC4899;
+            --warn: #F59E0B;
+            --dark: #111827;
+            --light: #F9FAFB;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(270deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 600% 600%;
+            animation: deluluShift 10s ease infinite;
+            color: var(--light);
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 3rem;
+        }
+
+        .button {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--accent);
+            color: var(--light);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        #monument {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse; /* Stack stones from bottom up */
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stone {
+            font-family: 'Pacifico', cursive;
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            line-height: 1.4;
+            text-align: center;
+            width: 80%;
+            border-left: 5px solid var(--warn);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes deluluShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Commentary Section */
+        .commentary-toggle {
+            font-family: 'Inter', sans-serif;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border: 2px solid var(--light);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+        
+        .commentary-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #commentaryBox {
+            display: none;
+            background: var(--dark);
+            color: var(--light);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            position: fixed;
+            bottom: 6rem; /* Positioned above the toggle button */
+            right: 2rem;
+            max-width: 350px;
+            width: calc(100% - 4rem); /* Responsive width */
+            border-top: 5px solid var(--accent);
+            text-align: left;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        #commentaryBox h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        
+        #commentaryBox p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+        }
+         #commentaryBox a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Footer Style */
+        .footer-credit {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--light);
+            opacity: 0.7;
+            text-align: right;
+            position: fixed; /* Changed to fixed */
+            bottom: 2.5rem; /* Adjusted position */
+            left: 2rem;
+            z-index: 10;
+        }
+
+        .footer-credit a {
+            color: var(--light);
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-credit a:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer-credit">
+        a digital monument by <a href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a>
+    </footer>
+
+    <div class="container">
+        <h1>Stay delulu!</h1>
+        
+        <div id="monument">
+            <!-- Stones will be loaded here by Firebase -->
+        </div>
+
+        <button class="button" id="addStoneButton">
+          I'm delulu! &nbsp;✨
+        </button>
+    </div>
+
+    <button class="commentary-toggle" id="commentaryToggle">
+        Field Note
+    </button>
+
+    <div id="commentaryBox">
+        <h3>Digital Archaeologist's Field Note</h3>
+        <p>This is not just a webpage; it's a digital ritual. The "delulu" phenomenon is a rational, defiant response to a world where the "grind" no longer guarantees success. It is a new framework for belief.</p>
+        <p>This monument makes that belief tangible. The act of clicking the button is a physical reinforcement of your mental choice. You are laying a stone in a communal, persistent landmark.</p>
+        <p>This is the core thesis of <strong>delulu.im</strong> ("I am delulu"). It's not just a passing trend; it's a new, human-centric home for a powerful idea. <br><em>- A. Sterling</em></p>
+    </div>
+
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, limit, orderBy } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // --- 1. FOUNDRY PROTOCOL: Initialize Firebase ---
+        // These variables are injected by the unearth.im foundry environment.
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-delulu-monument';
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let app, auth, db;
+        let userId = null;
+        let stonesCollection;
+
+        // Your specific Firebase config (as a fallback for local testing)
+        const localConfig = {
+            apiKey: "", // This must be filled for local testing if __firebase_config is absent
+            authDomain: "jojo-4b593.firebaseapp.com",
+            projectId: "jojo-4b593",
+            storageBucket: "jojo-4b593.firebasestorage.app",
+            messagingSenderId: "353107431611",
+            appId: "1:353107431611:web:7cc013c39abaefe144599e",
+            measurementId: "G-W3J3R7DGFF"
+        };
+        
+        // Use injected config if available, otherwise fall back to your local one.
+        const finalConfig = Object.keys(firebaseConfig).length > 0 ? firebaseConfig : localConfig;
+
+        try {
+            app = initializeApp(finalConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+
+            // --- 2. FOUNDRY PROTOCOL: Authentication ---
+            if (initialAuthToken) {
+                await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+                await signInAnonymously(auth);
+            }
+            
+            userId = auth.currentUser.uid;
+            
+            // --- 3. FOUNDRY PROTOCOL: Firestore Collection Path ---
+            // This path is public, as the monument is communal.
+            const collectionPath = `artifacts/${appId}/public/data/delulu-stones`;
+            stonesCollection = collection(db, collectionPath);
+
+            // Start the application
+            initializeAppLogic();
+
+        } catch (error) {
+            console.error("Firebase Initialization Error:", error);
+            // Show a non-intrusive error to the user
+            const monument = document.getElementById('monument');
+            monument.innerHTML = `<div class="stone" style="opacity: 1; transform: none; background-color: var(--warn); border-color: var(--dark);">Connection Error. Monument cannot be loaded.</div>`;
+            document.getElementById('addStoneButton').disabled = true;
+        }
+
+
+        // --- 4. Application Logic ---
+        function initializeAppLogic() {
+            const affirmations = [
+                "My delusions are my reality. 💖",
+                "Everything is conspiring in my favor. 💫",
+                "I am a magnet for miracles. ✨",
+                "Of course it's working out for me. 😉",
+                "I am living proof that 'delulu' is the 'solulu'. 💅",
+                "My wildest dreams are just my to-do list. 📝",
+                "I attract my desires with ease. 🧘‍♀️",
+                "That 'rejection' was just redirection. ↪️",
+                "I already have everything I want. 👑",
+                "The universe is obsessed with my success. 🌌",
+                "I get paid to simply exist. 💸",
+                "My aura is 'effortlessly iconic'. ✨",
+                "Obstacles? Never heard of them. 🤷‍♀️",
+                "The world literally bends to my will. 🌎",
+                "I'm the main character, obviously. 🎬",
+                "People are competing to give me what I want. 🎁",
+                "My bank account refills itself. 🏧",
+                "I'm so lucky, it's almost unfair. 🍀",
+                "If I want it, it's already mine. 🛍️",
+                "My intuition is my superpower. 🔮",
+                "Failure is just a rumor I don't believe in. 🤫",
+                "I am the universe's favorite. 🌟",
+                "I am the standard. The standard is me. 💎",
+                "My presence is a present. 🎁",
+                "I romanticize my life and it romanticizes me back. 🌹",
+                "Things just *happen* to work out for me. 🪄",
+                "I'm allergic to 'no'. 🤧",
+                "My assumptions create my reality. 🧠",
+                "The universe is my personal assistant. 📲",
+                "I said 'it is what it is,' and it became what I wanted. 😎",
+                "Worrying? That's not in my vocabulary. 📚",
+                "I am the 'how'. It gets done because I said so. 🗣️",
+                "My energy is a currency, and I'm rich. 💰",
+                "I'm living in the reality where I have it all. 🏠💖"
+            ];
+
+            let usedAffirmations = [];
+
+            const monument = document.getElementById('monument');
+            const addButton = document.getElementById('addStoneButton');
+            
+            addButton.addEventListener('click', addStone);
+
+            // --- 5. Write to Firestore ---
+            async function addStone() {
+                if (usedAffirmations.length === affirmations.length) {
+                    usedAffirmations = [];
+                }
+
+                let randomAffirmation;
+                do {
+                    randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+                } while (usedAffirmations.includes(randomAffirmation));
+                
+                usedAffirmations.push(randomAffirmation);
+
+                // Add the new stone to the database
+                try {
+                    await addDoc(stonesCollection, {
+                        text: randomAffirmation,
+                        createdAt: new Date(),
+                        userId: userId // Tag it to the user who added it
+                    });
+                    // The onSnapshot listener will handle rendering.
+                } catch (error) {
+                    console.error("Error adding document: ", error);
+                }
+            }
+
+            // --- 6. Load Stones from Firestore ---
+            // Create a query to get the last 50 stones, ordered by creation time
+            const q = query(stonesCollection, orderBy("createdAt", "desc"), limit(50));
+            
+            onSnapshot(q, (snapshot) => {
+                monument.innerHTML = ''; // Clear the monument on each update
+                snapshot.forEach((doc) => {
+                    const stoneData = doc.data();
+                    renderStone(stoneData.text);
+                });
+            }, (error) => {
+                console.error("Error with snapshot: ", error);
+                monument.innerHTML = `<div class="stone" style="opacity: 1; transform: none; background-color: var(--warn); border-color: var(--dark);">Snapshot Error. Cannot load stones.</div>`;
+            });
+
+            // Helper function to render a single stone
+            function renderStone(text) {
+                const stone = document.createElement('div');
+                stone.className = 'stone';
+                stone.textContent = text;
+                // Prepend so new stones appear at the top (before the column-reverse)
+                monument.prepend(stone);
+            }
+
+            // Commentary Toggle
+            const toggleButton = document.getElementById('commentaryToggle');
+            const commentaryBox = document.getElementById('commentaryBox');
+
+            toggleButton.addEventListener('click', () => {
+                if (commentaryBox.style.display === 'block') {
+                    commentaryBox.style.display = 'none';
+                } else {
+                    commentaryBox.style.display = 'block';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

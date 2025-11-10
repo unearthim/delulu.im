@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="deluluGradient" x1="0" y1="315" x2="1200" y2="315" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6B4EFF"/>
+            <stop offset="0.5" stop-color="#A855F7"/>
+            <stop offset="1" stop-color="#EC4899"/>
+        </linearGradient>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&amp;family=Inter:wght@700&amp;display=swap');
+            .title {
+                font-family: 'Pacifico', cursive;
+                font-size: 120px;
+                fill: #F9FAFB;
+                text-anchor: middle;
+            }
+            .subtitle {
+                font-family: 'Inter', sans-serif;
+                font-size: 32px;
+                font-weight: 700;
+                fill: #F9FAFB;
+                text-anchor: middle;
+                letter-spacing: 0.05em;
+            }
+        </style>
+    </defs>
+    <rect width="1200" height="630" fill="url(#deluluGradient)"/>
+    <text x="600" y="330" class="title">Stay delulu! ✨</text>
+    <text x="600" y="400" class="subtitle">A DIGITAL MONUMENT BY DELULU.IM</text>
+</svg>
