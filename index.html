@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script type="application/ld+json">
     {
@@ -33,7 +34,7 @@
           "@type": "Organization",
           "@id": "https://unearth.im/#organization",
           "name": "Unearth Heritage Foundry",
-"alternateName": ["Unearth Foundry", "Archive & Anvil"],
+"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
           "url": "https://unearth.im",
           "logo": {
             "@type": "ImageObject",
@@ -72,8 +73,10 @@
     <!-- === 1. Primary Meta Tags === -->
     <title>delulu.im | A Digital Monument</title>
     <meta name="title" content="delulu.im | A Digital Monument">
-    <meta name="description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
-    <meta name="keywords" content="delulu, solulu, trululu, delulu.im, digital monument, affirmations, grindset, digital archaeology, brand foundry, i am">
+    <meta name="description"
+        content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
+    <meta name="keywords"
+        content="delulu, solulu, trululu, delulu.im, digital monument, affirmations, grindset, digital archaeology, brand foundry, i am">
     <meta name="author" content="delulu.im (by unearth heritage foundry - archive & anvil - unearth.im)">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -81,15 +84,16 @@
 
     <!-- === Canonical Link === -->
     <link rel="canonical" href="https://delulu.im/" />
-  
+
     <!-- === 2. Webmention Endpoint === -->
     <link rel="webmention" href="https://webmention.io/delulu.im/webmention" />
 
     <!-- === 3. Open Graph / Facebook === -->
-    <meta property="og:type" content="website"> 
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://delulu.im/">
     <meta property="og:title" content="delulu.im | A Digital Monument">
-    <meta property="og:description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
+    <meta property="og:description"
+        content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
     <meta property="og:image" content="https://delulu.im/og-image.png">
     <meta property="og:site_name" content="delulu.im">
 
@@ -97,15 +101,17 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://delulu.im/">
     <meta property="twitter:title" content="delulu.im | A Digital Monument">
-    <meta property="twitter:description" content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
+    <meta property="twitter:description"
+        content="A communal digital monument for the 'delulu' generation. Add your belief, build the monument, and 'stay delulu.' A delulu.im digital artifact.">
     <meta property="twitter:image" content="https://delulu.im/og-image.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --primary: #6B4EFF;
@@ -115,7 +121,7 @@
             --dark: #111827;
             --light: #F9FAFB;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             /* Updated "Delulu" Background */
@@ -148,8 +154,9 @@
             font-family: 'Pacifico', cursive;
             font-size: 3rem;
             font-weight: 400;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            margin-bottom: 3rem; /* Increased this space */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 3rem;
+            /* Increased this space */
         }
 
         .button {
@@ -163,15 +170,15 @@
             border-radius: 0.75rem;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             /* margin-bottom: 2rem; <-- This is being moved */
         }
 
         .button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
-        
+
         .button:active {
             transform: translateY(-1px);
         }
@@ -179,7 +186,8 @@
         #monument {
             width: 100%;
             display: flex;
-            flex-direction: column-reverse; /* Stack stones from bottom up */
+            flex-direction: column-reverse;
+            /* Stack stones from bottom up */
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 2rem;
@@ -196,7 +204,7 @@
             text-align: center;
             width: 80%;
             border-left: 5px solid var(--warn);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: translateY(20px);
             animation: fadeIn 0.5s ease-out forwards;
@@ -211,9 +219,17 @@
 
         /* New animation for the background */
         @keyframes deluluShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Commentary Section */
@@ -234,7 +250,7 @@
             right: 2rem;
             z-index: 100;
         }
-        
+
         .commentary-toggle:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
@@ -247,26 +263,29 @@
             border-radius: 0.75rem;
             /* --- New Positioning --- */
             position: fixed;
-            bottom: 6rem; /* Positioned above the toggle button */
+            bottom: 6rem;
+            /* Positioned above the toggle button */
             right: 2rem;
             max-width: 350px;
-            width: calc(100% - 4rem); /* Responsive width */
+            width: calc(100% - 4rem);
+            /* Responsive width */
             /* --- */
             border-top: 5px solid var(--accent);
             text-align: left;
             z-index: 100;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         #commentaryBox h3 {
             color: var(--accent);
             margin-top: 0;
         }
-        
+
         #commentaryBox p {
             font-size: 0.95rem;
             line-height: 1.6;
-            font-family: 'Inter', sans-serif; /* Ensure commentary font is readable */
+            font-family: 'Inter', sans-serif;
+            /* Ensure commentary font is readable */
         }
 
         /* --- Updated Footer Style --- */
@@ -275,14 +294,21 @@
             font-size: 0.8rem;
             color: var(--light);
             opacity: 0.7;
-            text-align: right; /* Changed */
-            padding: 0; /* Changed */
-            width: auto; /* Changed */
+            text-align: right;
+            /* Changed */
+            padding: 0;
+            /* Changed */
+            width: auto;
+            /* Changed */
             position: absolute;
-            top: auto; /* Changed */
-            bottom: 1.5rem; /* Added */
-            right: 2rem; /* Added */
-            z-index: 10; /* Added */
+            top: auto;
+            /* Changed */
+            bottom: 1.5rem;
+            /* Added */
+            right: 2rem;
+            /* Added */
+            z-index: 10;
+            /* Added */
         }
 
         .footer-credit a {
@@ -295,28 +321,32 @@
         .footer-credit a:hover {
             opacity: 1;
         }
-        /* --- End Footer Style --- */
 
+        /* --- End Footer Style --- */
     </style>
 </head>
+
 <body>
 
     <!-- New Footer Position -->
     <footer class="footer-credit">
         <small>
-            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive & anvil</a></b>
+            a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer">liminal mind
+                    meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank"
+                    rel="noopener noreferrer">unearth.im</a></b> | <b><a href="https://archaeobytology.org"
+                    target="_blank" rel="noopener noreferrer">archive & anvil</a></b>
         </small>
     </footer>
 
     <div class="container">
         <h1>Stay delulu!</h1>
-        
+
         <div id="monument">
             <!-- Affirmation "stones" will be added here by JS -->
         </div>
 
         <button class="button" id="addStoneButton">
-          I'm delulu!   ✨
+            I'm delulu! ✨
         </button>
     </div>
 
@@ -341,7 +371,7 @@
     -->
 
     <script>
-const affirmations = [
+        const affirmations = [
             "My delusions are my reality. 💖",
             "Everything is conspiring in my favor. 💫",
             "I am a magnet for miracles. ✨",
@@ -382,7 +412,7 @@ const affirmations = [
 
         const monument = document.getElementById('monument');
         const addButton = document.getElementById('addStoneButton');
-        
+
         addButton.addEventListener('click', addStone);
 
         function addStone() {
@@ -396,14 +426,14 @@ const affirmations = [
             do {
                 randomAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
             } while (usedAffirmations.includes(randomAffirmation));
-            
+
             usedAffirmations.push(randomAffirmation);
 
             // Create the new "stone" element
             const stone = document.createElement('div');
             stone.className = 'stone';
             stone.textContent = randomAffirmation;
-            
+
             // Add the stone to the top of the monument
             monument.prepend(stone);
         }
@@ -428,4 +458,5 @@ const affirmations = [
     </script>
 
 </body>
+
 </html>
